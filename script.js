@@ -1,3 +1,4 @@
-if (value === '.' && currentInput.includes('.')) {
-    return; // Prevent multiple decimal points
+const MAX_INPUT_LENGTH = 20; // configurable
+if (currentInput.length >= MAX_INPUT_LENGTH) {
+    return;
 }
