@@ -1,7 +1,8 @@
-if (shouldResetDisplay) {
+function clearDisplay() {
+    const display = document.getElementById('display');
     display.value = '';
-    shouldResetDisplay = false;
+    currentInput = '';
+    operator = '';
+    previousInput = '';
+    document.getElementById('result').textContent = '';
 }
-// Now append
-display.value += value;
-currentInput = display.value;
