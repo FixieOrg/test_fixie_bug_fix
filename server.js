@@ -1,19 +1,4 @@
-switch(operation) {
-  case 'add':
-    result = a + b;
-    break;
-  case 'subtract':
-    result = a - b;
-    break;
-  case 'multiply':
-    result = a * b;
-    break;
-  case 'divide':
-    if (b === 0) {
-      return res.status(400).json({ error: 'Division by zero' });
-    }
-    result = a / b;
-    break;
-  default:
-    return res.status(400).json({ error: 'Invalid operation' });
-}
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Internal Server Error' });
+});
