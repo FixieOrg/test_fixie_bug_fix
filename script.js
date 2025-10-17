@@ -1,4 +1,7 @@
-const MAX_INPUT_LENGTH = 20; // configurable
-if (currentInput.length >= MAX_INPUT_LENGTH) {
-    return;
+if (shouldResetDisplay) {
+    display.value = '';
+    shouldResetDisplay = false;
 }
+// Now append
+display.value += value;
+currentInput = display.value;
