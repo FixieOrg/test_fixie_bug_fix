@@ -1,8 +1,6 @@
-process.on('uncaughtException', (err) => {
-  console.error('Uncaught Exception:', err);
-  process.exit(1);
-});
-process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled Rejection:', reason);
-  process.exit(1);
-});
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+app.use(helmet());
+app.use(cors({ origin: 'https://example.com' }));
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
+app.use(limiter);
