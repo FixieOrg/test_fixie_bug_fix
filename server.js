@@ -1,2 +1,1 @@
-const morgan = require('morgan');
-app.use(morgan('combined'));
+// Removed commented out body parser and error handling code
