@@ -1,4 +1,4 @@
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Internal Server Error' });
-});
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+app.use(helmet());
+app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
