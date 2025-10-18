@@ -1,4 +1,4 @@
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-app.use(helmet());
-app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.originalUrl}`);
+  next();
+});
