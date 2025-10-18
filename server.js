@@ -1,4 +1,5 @@
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ error: 'Internal Server Error' });
-});
+const morgan = require('morgan');
+const helmet = require('helmet');
+...
+app.use(helmet());
+app.use(morgan('combined'));
